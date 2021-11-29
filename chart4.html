@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <link rel="stylesheet" href="chart4.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class=pad>
+        <button class="button"><a href="chart3.html" class="button">Prev chart</a></button>
+        <button class="button"><a href="chart5.html" class="button">next chart</a></button>
+      </div>
+<h1 class="title">Passengers class</h1>
+    <div class="chart">
+      <ul class="numbers">
+        <li><span>100%</span></li>
+        <li><span>50%</span></li>
+        <li><span>0%</span></li>
+      </ul>
+      <ul class="bars">
+        <li><div class="bar" data-percentage="24.68"></div><span>1</span></li>
+        <li><div class="bar" data-percentage="21.16"></div><span>2</span></li>
+        <li><div class="bar" data-percentage="54.16"></div><span>3</span></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+      $('.bars li .bar').each(function(key, bar){
+        var percentage = $(this).data('percentage');
+        $(this).animate({
+          'height' : percentage + '%'
+        },1000);
+      });
+    });
+    </script>
+
+  </body>
+</html>
